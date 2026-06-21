@@ -22,20 +22,44 @@
       --border-color: #e2e8f0;
     }
 
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      background: var(--light-bg);
+      background:
+        radial-gradient(circle at top, rgba(204, 255, 0, 0.06), transparent 28%),
+        #f3f5f7;
       color: var(--secondary-color);
     }
 
     /* Header */
     header {
-      background: linear-gradient(135deg, var(--primary-color) 0%, #000 100%);
+      background: linear-gradient(135deg, #111827 0%, #000 100%);
       color: white;
-      padding: 2rem 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem 1rem 2.25rem;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.18);
     }
 
     /* Hero Cover Image */
@@ -46,6 +70,8 @@
       display: block;
       margin: 0;
       padding: 0;
+      border-bottom: 0;
+      animation: fade-in 0.8s ease both;
     }
 
     header .container {
@@ -59,6 +85,7 @@
 
     .logo-section {
       text-align: center;
+      animation: fade-up 0.7s ease both;
     }
 
     .logo-placeholder {
@@ -76,33 +103,97 @@
     }
 
     .logo-img {
-      max-width: 100px;
+      max-width: 110px;
       height: auto;
       margin: 0 auto;
       display: block;
     }
 
     header h1 {
-      margin: 1rem 0 0 0;
-      font-size: 28px;
+      margin: 0.85rem 0 0 0;
+      font-size: 27px;
       font-weight: 700;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.7rem;
+      margin-bottom: 0.85rem;
+      border-radius: 999px;
+      background: rgba(204, 255, 0, 0.12);
+      color: var(--accent-color);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .header-content h2 {
       margin: 0 0 0.5rem 0;
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--accent-color);
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-      letter-spacing: 1px;
+      font-size: 30px;
+      font-weight: 700;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      letter-spacing: 0.2px;
     }
 
     .header-content p {
       margin: 0.5rem 0 0 0;
-      font-size: 18px;
-      color: #ffffff;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-      font-weight: 500;
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.92);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65);
+      font-weight: 400;
+      max-width: 56ch;
+    }
+
+    .header-content {
+      animation: fade-up 0.8s ease 0.1s both;
+    }
+
+    .header-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      background: rgba(204, 255, 0, 0.12);
+      border: 1px solid rgba(204, 255, 0, 0.5);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .header-cta:hover {
+      border-bottom-color: transparent;
+      transform: translateY(-1px);
+    }
+
+    .hero-pill:hover,
+    .trust-item:hover {
+      transform: translateY(-1px);
     }
 
     /* Main Content */
@@ -117,25 +208,127 @@
       margin: 0 auto;
     }
 
+    .trust-strip {
+      max-width: 1200px;
+      margin: -0.75rem auto 1.5rem;
+      padding: 0.9rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      background: linear-gradient(135deg, rgba(204, 255, 0, 0.16), rgba(17, 24, 39, 0.04));
+      border: 1px solid rgba(204, 255, 0, 0.18);
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      animation: fade-up 0.7s ease 0.15s both;
+    }
+
+    .trust-item {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-left: 4px solid var(--accent-color);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      color: var(--primary-color);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+      color: white;
+      border-color: rgba(204, 255, 0, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(204, 255, 0, 0.14), transparent 30%);
+      pointer-events: none;
+    }
+
+    .contact-section>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-section h2 {
+      color: white;
+      border-bottom-color: rgba(204, 255, 0, 0.65);
+    }
+
+    .contact-section .contact-item {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-section .contact-item strong {
+      color: var(--accent-color);
+    }
+
+    .contact-section .contact-item a {
+      color: white;
+    }
+
+    .contact-section .contact-item a:hover {
+      border-bottom-color: white;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
     section {
       background: white;
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 14px;
+      padding: 1.75rem;
       margin-bottom: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      animation: fade-up 0.7s ease both;
+    }
+
+    main>section:nth-of-type(1) {
+      animation-delay: 0.05s;
+    }
+
+    main>section:nth-of-type(2) {
+      animation-delay: 0.12s;
+    }
+
+    main>section:nth-of-type(3) {
+      animation-delay: 0.18s;
+    }
+
+    main>section:nth-of-type(4) {
+      animation-delay: 0.24s;
+    }
+
+    main>section:nth-of-type(5) {
+      animation-delay: 0.3s;
     }
 
     section:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
     }
 
     h2 {
       margin: 0 0 1rem 0;
-      font-size: 22px;
+      font-size: 21px;
       color: var(--primary-color);
-      border-bottom: 2px solid var(--accent-color);
+      border-bottom: 1px solid rgba(204, 255, 0, 0.65);
       padding-bottom: 0.75rem;
     }
 
@@ -165,27 +358,51 @@
     /* Services Grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
 
     .service-card {
-      background: var(--light-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
       padding: 1.5rem;
-      text-align: center;
+      text-align: left;
       transition: transform 0.2s ease;
+      animation: fade-up 0.7s ease both;
+    }
+
+    .service-card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .service-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .service-card:nth-child(3) {
+      animation-delay: 0.15s;
+    }
+
+    .service-card:nth-child(4) {
+      animation-delay: 0.2s;
     }
 
     .service-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-4px);
     }
 
     .service-icon {
-      font-size: 32px;
-      margin-bottom: 0.75rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(204, 255, 0, 0.14);
+      font-size: 24px;
+      margin-bottom: 1rem;
     }
 
     .service-card h3 {
@@ -195,29 +412,57 @@
 
     .service-card p {
       margin: 0;
-      font-size: 14px;
+      font-size: 15px;
+      color: #4b5563;
     }
 
-    /* Gallery/Image placeholders */
+    /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
       margin-top: 1.5rem;
     }
 
-    .image-placeholder {
-      background: var(--light-bg);
-      border: 2px dashed var(--border-color);
-      border-radius: 8px;
+    .gallery-image {
+      width: 100%;
       aspect-ratio: 16 / 9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 0.5rem;
-      font-size: 14px;
-      color: #64748b;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+      display: block;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: fade-up 0.7s ease both;
+    }
+
+    .gallery-image:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .gallery-image:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .gallery-image:nth-child(3) {
+      animation-delay: 0.15s;
+    }
+
+    .gallery-image:nth-child(4) {
+      animation-delay: 0.2s;
+    }
+
+    .gallery-image:nth-child(5) {
+      animation-delay: 0.25s;
+    }
+
+    .gallery-image:nth-child(6) {
+      animation-delay: 0.3s;
+    }
+
+    .gallery-image:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
     }
 
     /* Contact Section */
@@ -229,10 +474,23 @@
     }
 
     .contact-item {
-      background: var(--light-bg);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       padding: 1.5rem;
-      border-radius: 8px;
+      border-radius: 14px;
       border-left: 4px solid var(--accent-color);
+      animation: fade-up 0.7s ease both;
+    }
+
+    .contact-item:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .contact-item:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .contact-item:nth-child(3) {
+      animation-delay: 0.15s;
     }
 
     .contact-item strong {
@@ -256,12 +514,25 @@
         text-align: center;
       }
 
+      .header-highlights {
+        justify-content: center;
+      }
+
+      .trust-strip {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+      }
+
+      .trust-item {
+        text-align: left;
+      }
+
       header h1 {
         font-size: 24px;
       }
 
       .header-content h2 {
-        font-size: 18px;
+        font-size: 24px;
       }
 
       main {
@@ -269,21 +540,34 @@
       }
 
       section {
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
       }
 
       h2 {
         font-size: 18px;
       }
+
+      .header-cta {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .service-card {
+        text-align: left;
+      }
+
+      .contact-section {
+        background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+      }
     }
 
     /* Footer */
     footer {
-      background: var(--secondary-color);
+      background: #111827;
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.75rem 1rem;
       font-size: 14px;
       margin-top: 3rem;
     }
@@ -296,7 +580,10 @@
 
 <body>
   <!-- Hero Cover Image -->
-  <img src="hero.png" alt="J&amp;D Labor Max - Professional Waste Management Services" class="hero-image" />
+  <picture>
+    <source media="(max-width: 768px)" srcset="hero-mobile.png" />
+    <img src="hero.png" alt="J&amp;D Labor Max - Professional Waste Management Services" class="hero-image" />
+  </picture>
   <header>
     <div class="container">
       <div>
@@ -306,16 +593,26 @@
         </div>
       </div>
       <div class="header-content">
+        <div class="hero-kicker">South Florida • Miami</div>
         <h2>Junk Removal, Demolition &amp; More</h2>
         <p>
-          Fast, reliable waste management solutions for South Florida. Free estimates available.
+          Fast, reliable waste management solutions for South Florida with clear pricing and free estimates.
         </p>
-        <p style="font-size: 18px; font-weight: 700; color: var(--accent-color); margin-top: 1rem;">
-          📞 <a href="tel:+13312031425" style="color: var(--accent-color);">331-203-1425</a>
-        </p>
+        <div class="header-highlights">
+          <span class="hero-pill">Free estimates</span>
+          <span class="hero-pill">Fast response</span>
+          <span class="hero-pill">Residential &amp; commercial</span>
+        </div>
+        <a class="header-cta" href="tel:+13312031425">📞 331-203-1425</a>
       </div>
     </div>
   </header>
+
+  <div class="trust-strip">
+    <div class="trust-item">Free estimates</div>
+    <div class="trust-item">South Florida service</div>
+    <div class="trust-item">Fast response times</div>
+  </div>
 
   <main>
     <!-- About Section -->
@@ -375,35 +672,24 @@
       </p>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Fleet & Service Photos Section -->
     <section>
-      <h2>Project Gallery</h2>
+      <h2>Fleet &amp; Service Photos</h2>
       <p>
-        Explore our work and see the quality of service J&amp;D Labor Max delivers to businesses throughout South
-        Florida.
+        Take a look at our trucks, trailers, and equipment in action across South Florida.
       </p>
       <div class="gallery">
-        <div class="image-placeholder">
-          📸<br />Project Photo 1
-        </div>
-        <div class="image-placeholder">
-          📸<br />Project Photo 2
-        </div>
-        <div class="image-placeholder">
-          📸<br />Project Photo 3
-        </div>
-        <div class="image-placeholder">
-          📸<br />Project Photo 4
-        </div>
+        <img src="images/gallery-1.jpeg" alt="J&amp;D Labor Max gallery image 1" class="gallery-image" />
+        <img src="images/gallery-2.jpeg" alt="J&amp;D Labor Max gallery image 2" class="gallery-image" />
+        <img src="images/gallery-3.jpeg" alt="J&amp;D Labor Max gallery image 3" class="gallery-image" />
+        <img src="images/gallery-4.jpeg" alt="J&amp;D Labor Max gallery image 4" class="gallery-image" />
+        <img src="images/gallery-5.jpeg" alt="J&amp;D Labor Max gallery image 5" class="gallery-image" />
+        <img src="images/gallery-6.jpeg" alt="J&amp;D Labor Max gallery image 6" class="gallery-image" />
       </div>
-      <p style="margin-top: 1.5rem; font-size: 13px; color: #64748b;">
-        💡 <strong>Tip:</strong> Replace image placeholders with your project photos by editing the HTML and adding
-        <code>&lt;img src="your-image.jpg" alt="description"&gt;</code> elements.
-      </p>
     </section>
 
     <!-- Contact Section -->
-    <section>
+    <section class="contact-section">
       <h2>Contact Us</h2>
       <p>
         Ready to discuss your waste management needs? Get in touch with our team today.
