@@ -1,88 +1,464 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>J&amp;D Labor Max | Waste Management Services</title>
-    <meta
-      name="description"
-      content="J&amp;D Labor Max provides reliable waste management services in South Florida near Miami."
-    />
-    <style>
-      :root {
-        color-scheme: light;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J&amp;D Labor Max | Professional Waste Management Services</title>
+  <meta name="description"
+    content="J&amp;D Labor Max provides reliable, professional waste management services in South Florida and Miami. Trusted by businesses for dependable, efficient solutions." />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      color-scheme: light;
+      --primary-color: #1f2937;
+      --secondary-color: #1f2937;
+      --accent-color: #ccff00;
+      --success-color: #059669;
+      --light-bg: #f8fafc;
+      --border-color: #e2e8f0;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--light-bg);
+      color: var(--secondary-color);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #000 100%);
+      color: white;
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hero Cover Image */
+    .hero-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .logo-section {
+      text-align: center;
+    }
+
+    .logo-placeholder {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px dashed white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: white;
+      margin: 0 auto;
+    }
+
+    .logo-img {
+      max-width: 100px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    header h1 {
+      margin: 1rem 0 0 0;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .header-content h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent-color);
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      letter-spacing: 1px;
+    }
+
+    .header-content p {
+      margin: 0.5rem 0 0 0;
+      font-size: 18px;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      font-weight: 500;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      margin: 0 0 1rem 0;
+      font-size: 22px;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      margin: 1.5rem 0 0.75rem 0;
+      font-size: 16px;
+      color: var(--secondary-color);
+    }
+
+    p {
+      margin: 0.75rem 0;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    a:hover {
+      border-bottom-color: var(--accent-color);
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--light-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card h3 {
+      margin: 0 0 0.75rem 0;
+      color: var(--primary-color);
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Gallery/Image placeholders */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .image-placeholder {
+      background: var(--light-bg);
+      border: 2px dashed var(--border-color);
+      border-radius: 8px;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    /* Contact Section */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-item {
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item p {
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header .container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
 
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.5;
-        background: #f7fafc;
-        color: #1a202c;
+      .header-content {
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      .header-content h2 {
+        font-size: 18px;
       }
 
       main {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 3rem 1rem;
-      }
-
-      h1,
-      h2 {
-        margin: 0 0 0.75rem;
+        padding: 1rem 0.5rem;
       }
 
       section {
-        background: #fff;
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        padding: 1.25rem;
-        margin-bottom: 1rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
       }
 
-      a {
-        color: #005ea2;
-        font-weight: 700;
+      h2 {
+        font-size: 18px;
       }
-    </style>
-  </head>
-  <body>
-    <main>
-      <section>
-        <h1>J&amp;D Labor Max</h1>
-        <p>
-          Professional waste management services for South Florida businesses and
-          communities near Miami.
-        </p>
-      </section>
+    }
 
-      <section>
-        <h2>What We Do</h2>
-        <p>
-          We specialize in dependable waste management solutions designed to keep
-          your sites clean, safe, and efficient.
-        </p>
-      </section>
+    /* Footer */
+    footer {
+      background: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 14px;
+      margin-top: 3rem;
+    }
 
-      <section>
-        <h2>Service Area</h2>
-        <p>Serving South Florida, including the Miami area.</p>
-      </section>
+    footer p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
 
-      <section>
-        <h2>Contact</h2>
+<body>
+  <!-- Hero Cover Image -->
+  <img src="hero.png" alt="J&amp;D Labor Max - Professional Waste Management Services" class="hero-image" />
+  <header>
+    <div class="container">
+      <div>
+        <div class="logo-section">
+          <img src="logo.jpeg" alt="J&amp;D Labor Max Logo" class="logo-img" />
+          <h1>J&amp;D Labor Max</h1>
+        </div>
+      </div>
+      <div class="header-content">
+        <h2>Junk Removal, Demolition &amp; More</h2>
         <p>
-          Phone (as provided): <a href="tel:+13312031425">331-203-1425</a>
+          Fast, reliable waste management solutions for South Florida. Free estimates available.
         </p>
-      </section>
+        <p style="font-size: 18px; font-weight: 700; color: var(--accent-color); margin-top: 1rem;">
+          📞 <a href="tel:+13312031425" style="color: var(--accent-color);">331-203-1425</a>
+        </p>
+      </div>
+    </div>
+  </header>
 
-      <section>
-        <h2>Brand Assets</h2>
-        <p>
-          Photos and the company logo can be added to this page as soon as they
-          are available.
-        </p>
-      </section>
-    </main>
-  </body>
+  <main>
+    <!-- About Section -->
+    <section>
+      <h2>About J&amp;D Labor Max</h2>
+      <p>
+        J&amp;D Labor Max is your trusted partner for comprehensive waste management services in South Florida.
+        We're committed to providing dependable, efficient, and professional solutions that keep your business
+        operations running smoothly while maintaining the highest standards of service and safety.
+      </p>
+      <p>
+        With expertise in waste management and a deep understanding of South Florida's unique operational needs,
+        we deliver customized solutions designed specifically for your business.
+      </p>
+    </section>
+
+    <!-- Services Section -->
+    <section>
+      <h2>Our Services</h2>
+      <p>
+        We specialize in a comprehensive range of waste management solutions tailored to meet the diverse needs
+        of businesses and communities throughout South Florida.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🗑️</div>
+          <h3>Waste Removal</h3>
+          <p>Professional and reliable waste removal services for businesses of all sizes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧹</div>
+          <h3>Site Cleaning</h3>
+          <p>Keep your work sites clean, safe, and ready for operations.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">♻️</div>
+          <h3>Sustainable Solutions</h3>
+          <p>Environmentally responsible waste management practices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚛</div>
+          <h3>Logistics Support</h3>
+          <p>Efficient scheduling and logistics coordination for your needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section>
+      <h2>Service Area</h2>
+      <p>
+        Based in South Florida, we serve the Miami area and surrounding communities. Our extensive local
+        knowledge and established operations allow us to provide prompt, reliable service throughout the region.
+      </p>
+      <p>
+        <strong>Primary Service Area:</strong> South Florida, including Miami and surrounding municipalities.
+      </p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section>
+      <h2>Project Gallery</h2>
+      <p>
+        Explore our work and see the quality of service J&amp;D Labor Max delivers to businesses throughout South
+        Florida.
+      </p>
+      <div class="gallery">
+        <div class="image-placeholder">
+          📸<br />Project Photo 1
+        </div>
+        <div class="image-placeholder">
+          📸<br />Project Photo 2
+        </div>
+        <div class="image-placeholder">
+          📸<br />Project Photo 3
+        </div>
+        <div class="image-placeholder">
+          📸<br />Project Photo 4
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem; font-size: 13px; color: #64748b;">
+        💡 <strong>Tip:</strong> Replace image placeholders with your project photos by editing the HTML and adding
+        <code>&lt;img src="your-image.jpg" alt="description"&gt;</code> elements.
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+      <h2>Contact Us</h2>
+      <p>
+        Ready to discuss your waste management needs? Get in touch with our team today.
+      </p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <strong>📞 Phone</strong>
+          <p>
+            <a href="tel:+13312031425">331-203-1425</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <strong>📍 Service Area</strong>
+          <p>South Florida &amp; Miami Area</p>
+        </div>
+        <div class="contact-item">
+          <strong>⏰ Availability</strong>
+          <p>Professional, responsive service when you need it</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section>
+      <h2>Why Choose J&amp;D Labor Max?</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <h3>Reliability</h3>
+          <p>Dependable service you can count on for your operations.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <h3>Expertise</h3>
+          <p>Years of experience in South Florida waste management.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <h3>Professionalism</h3>
+          <p>Trained, courteous team committed to your satisfaction.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <h3>Efficiency</h3>
+          <p>Streamlined operations that respect your timeline and budget.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 J&amp;D Labor Max. All rights reserved.</p>
+    <p>Professional Waste Management Services | South Florida</p>
+  </footer>
+</body>
+
 </html>
